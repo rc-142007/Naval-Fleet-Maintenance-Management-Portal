@@ -36,21 +36,7 @@ Live Demo
   https://naval-fleet-maintenance-management-portal.vercel.app
 - Backend health check:
   https://naval-fleet-maintenance-management-portal.onrender.com/
-Project Structure
-NFFMP/
-├── frontend/       # React + Vite client
-│   ├── src/
-│   └── package.json
-├── server/         # Express API
-│   ├── config/
-│   ├── controllers/
-│   ├── middleware/
-│   ├── models/
-│   ├── routes/
-│   ├── services/
-│   ├── server.js
-│   └── package.json
-└── .gitignore
+
 Run Locally
 Prerequisites
 - Node.js (LTS recommended)
