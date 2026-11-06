@@ -3,7 +3,7 @@ const Equipment = require("../models/Equipment");
 const Maintenance = require("../models/Maintenance");
 const Repair = require("../models/Repair");
 const Problem = require("../models/Problem");
-const User = require("../models/user");
+const User = require("../models/User");
 
 // 1. Equipment statistics
 const getEquipmentReport = async (req, res) => {
