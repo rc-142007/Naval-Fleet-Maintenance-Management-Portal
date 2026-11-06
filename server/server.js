@@ -12,7 +12,6 @@ const dotenv = require("dotenv");
 const jwt = require("jsonwebtoken");
 const { Server } = require("socket.io");
 
-
 // 2. Load environment variables
 dotenv.config();
 
@@ -33,6 +32,7 @@ const notificationRoutes = require("./routes/notificationRoutes");
 const reportRoutes = require("./routes/reportRoutes");
 const dashboardRoutes = require("./routes/dashboardRoutes");
 const userRoutes = require("./routes/userRoutes");
+
 // 6. Import maintenance reminder service
 const {
   startMaintenanceReminderJob
@@ -44,15 +44,33 @@ const app = express();
 // 8. Create HTTP server
 const server = http.createServer(app);
 
-// 9. Configure Socket.IO
+// 9. Configure allowed frontend origins
+const allowedOrigins = [
+  "http://localhost:5173",
+  "http://localhost:5174",
+  process.env.FRONTEND_URL
+].filter(Boolean);
+
+// 10. Configure Express CORS
+app.use(cors({
+  origin: allowedOrigins,
+  methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
+  credentials: true
+}));
+
+// Handle JSON requests
+app.use(express.json());
+
+// 11. Configure Socket.IO
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:5173",
-    methods: ["GET", "POST", "PUT", "PATCH", "DELETE"]
+    origin: allowedOrigins,
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
+    credentials: true
   }
 });
 
-// 10. Authenticate Socket.IO connections
+// 12. Authenticate Socket.IO connections
 io.use(async (socket, next) => {
   try {
     const token = socket.handshake.auth.token;
@@ -61,7 +79,10 @@ io.use(async (socket, next) => {
       return next(new Error("Authentication required"));
     }
 
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    const decoded = jwt.verify(
+      token,
+      process.env.JWT_SECRET
+    );
 
     const user = await User.findById(decoded.id).select("-password");
 
@@ -72,35 +93,31 @@ io.use(async (socket, next) => {
     socket.userId = user._id.toString();
 
     next();
+
   } catch (error) {
+    console.error("Socket authentication error:", error.message);
     next(new Error("Socket authentication failed"));
   }
 });
 
-// 11. Join private notification rooms
+// 13. Join private notification rooms
 io.on("connection", (socket) => {
+
   socket.join(`user_${socket.userId}`);
 
-  console.log(`User connected to notifications: ${socket.userId}`);
+  console.log(
+    `User connected to notifications: ${socket.userId}`
+  );
 
   socket.on("disconnect", () => {
-    console.log(`User disconnected: ${socket.userId}`);
+    console.log(
+      `User disconnected: ${socket.userId}`
+    );
   });
+
 });
 
-// 12. Configure Express middleware
-app.use(cors({
-  origin: [
-    "http://localhost:5173",
-    "http://localhost:5174"
-  ],
-  methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
-  credentials: true
-}));
-
-app.use(express.json());
-
-// 13. Register API routes
+// 14. Register API routes
 app.use("/api/auth", authRoutes);
 app.use("/api/equipment", equipmentRoutes);
 app.use("/api/inspections", inspectionRoutes);
@@ -111,10 +128,11 @@ app.use("/api/notifications", notificationRoutes);
 app.use("/api/reports", reportRoutes);
 app.use("/api/dashboard", dashboardRoutes);
 app.use("/api/users", userRoutes);
-// 14. Make Socket.IO available to API routes
+
+// 15. Make Socket.IO available to API routes
 app.set("io", io);
 
-// 15. Test route
+// 16. Backend test route
 app.get("/", (req, res) => {
   res.status(200).json({
     success: true,
@@ -122,23 +140,30 @@ app.get("/", (req, res) => {
   });
 });
 
-// 16. Server port
+// 17. Server port
 const PORT = process.env.PORT || 5000;
 
-// 17. Start server after database connection
+// 18. Start server after database connection
 const startServer = async () => {
   try {
+
     await connectDB();
 
     // Start automated maintenance reminders
     startMaintenanceReminderJob(io);
 
-    server.listen(PORT, () => {
+    server.listen(PORT, "0.0.0.0", () => {
       console.log(`NFMMP Server running on port ${PORT}`);
+      console.log("Allowed frontend origins:", allowedOrigins);
     });
 
   } catch (error) {
-    console.error("Server startup failed:", error.message);
+
+    console.error(
+      "Server startup failed:",
+      error.message
+    );
+
     process.exit(1);
   }
 };
