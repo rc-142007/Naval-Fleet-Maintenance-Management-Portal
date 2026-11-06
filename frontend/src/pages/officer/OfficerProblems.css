@@ -1,0 +1,506 @@
+
+.officer-problems-page {
+  min-height: 100vh;
+  padding: 30px 5%;
+  color: #f5f5f5;
+  background:
+    linear-gradient(rgba(3, 13, 29, 0.88), rgba(3, 13, 29, 0.94)),
+    url("../../assets/images/indiannavy.webp") center/cover fixed;
+}
+
+.officer-problems-header,
+.officer-problems-section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.officer-problems-header {
+  padding: 20px 0 30px;
+  border-bottom: 1px solid rgba(220, 185, 110, 0.3);
+}
+
+.officer-problems-eyebrow,
+.officer-problems-section-heading > div > span {
+  color: #d7b56d;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.officer-problems-header h1 {
+  margin: 10px 0;
+  font-size: 32px;
+}
+
+.officer-problems-header p,
+.officer-problems-section-heading p {
+  color: #bdc7d6;
+  margin: 5px 0;
+}
+
+.officer-problems-header-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.officer-problems-refresh,
+.officer-problems-back,
+.officer-problems-review-btn,
+.officer-problems-submit-btn {
+  border: none;
+  border-radius: 8px;
+  padding: 12px 18px;
+  background: #d4ad61;
+  color: #101b2b;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.2s;
+  text-align: center;
+}
+
+.officer-problems-refresh:hover,
+.officer-problems-back:hover,
+.officer-problems-review-btn:hover,
+.officer-problems-submit-btn:hover {
+  background: #edce8d;
+  transform: translateY(-2px);
+}
+
+.officer-problems-refresh:disabled,
+.officer-problems-submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.officer-problems-main {
+  max-width: 1500px;
+  margin: 30px auto;
+}
+
+.officer-problems-summary {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-bottom: 30px;
+}
+
+.officer-problems-card,
+.officer-problems-content {
+  background: rgba(8, 24, 45, 0.88);
+  border: 1px solid rgba(215, 181, 109, 0.25);
+  border-radius: 13px;
+  padding: 22px;
+  backdrop-filter: blur(10px);
+}
+
+.officer-problems-card span {
+  color: #c0cad8;
+  font-size: 13px;
+}
+
+.officer-problems-card h2 {
+  color: #e1bd74;
+  font-size: 30px;
+  margin: 12px 0 0;
+}
+
+.officer-problems-section-heading {
+  margin-bottom: 25px;
+}
+
+.officer-problems-section-heading h2 {
+  margin: 8px 0;
+}
+
+.officer-problems-filters {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.officer-problems-filters input,
+.officer-problems-filters select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px;
+  border: 1px solid rgba(215, 181, 109, 0.3);
+  border-radius: 7px;
+  outline: none;
+  background: #101f34;
+  color: white;
+  font: inherit;
+}
+
+.officer-problems-filters select option {
+  background: #101f34;
+}
+
+.officer-problems-filters input:focus,
+.officer-problems-filters select:focus {
+  border-color: #d7b56d;
+  box-shadow: 0 0 0 2px rgba(215, 181, 109, 0.12);
+}
+
+.officer-problems-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.officer-problems-table {
+  width: 100%;
+  min-width: 1100px;
+  border-collapse: collapse;
+}
+
+.officer-problems-table th,
+.officer-problems-table td {
+  padding: 16px 13px;
+  text-align: left;
+  vertical-align: middle;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.officer-problems-table th {
+  color: #e1bd74;
+  font-size: 11px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.officer-problems-table td {
+  color: #e0e7f0;
+  font-size: 13px;
+}
+
+.officer-problems-muted,
+.officer-problems-description {
+  display: block;
+  margin-top: 5px;
+  color: #9eacbf;
+  font-size: 11px;
+  max-width: 230px;
+  overflow-wrap: anywhere;
+}
+
+.officer-problems-badge {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.officer-problem-severity-low {
+  color: #8ce0b0;
+  background: rgba(44, 160, 100, 0.16);
+}
+
+.officer-problem-severity-medium {
+  color: #f1d078;
+  background: rgba(210, 160, 50, 0.17);
+}
+
+.officer-problem-severity-high {
+  color: #ffb17d;
+  background: rgba(220, 110, 45, 0.17);
+}
+
+.officer-problem-severity-critical {
+  color: #ff9999;
+  background: rgba(210, 65, 65, 0.2);
+}
+
+.officer-problem-status-reported {
+  color: #f1d078;
+  background: rgba(210, 160, 50, 0.17);
+}
+
+.officer-problem-status-review,
+.officer-problem-status-repair {
+  color: #8cc9ff;
+  background: rgba(50, 130, 210, 0.17);
+}
+
+.officer-problem-status-resolved {
+  color: #8ce0b0;
+  background: rgba(44, 160, 100, 0.16);
+}
+
+.officer-problems-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  min-width: 110px;
+}
+
+.officer-problems-view-btn,
+.officer-problems-review-btn {
+  border: none;
+  border-radius: 6px;
+  padding: 9px 12px;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.officer-problems-view-btn {
+  color: #e8c77f;
+  border: 1px solid rgba(215, 181, 109, 0.5);
+  background: rgba(215, 181, 109, 0.1);
+}
+
+.officer-problems-view-btn:hover {
+  background: rgba(215, 181, 109, 0.22);
+}
+
+.officer-problems-review-btn {
+  background: #d4ad61;
+  color: #101b2b;
+}
+
+.officer-problems-alert,
+.officer-problems-empty {
+  padding: 16px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.officer-problems-alert.error {
+  color: #ffaaaa;
+  background: rgba(180, 45, 45, 0.2);
+}
+
+.officer-problems-alert.success {
+  color: #9ce6b7;
+  background: rgba(40, 150, 90, 0.2);
+}
+
+.officer-problems-empty {
+  color: #bdc7d6;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+/* DETAILS MODAL */
+
+.officer-problems-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.78);
+  backdrop-filter: blur(5px);
+}
+
+.officer-problems-modal {
+  width: 100%;
+  max-width: 750px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: #0b1d33;
+  border: 1px solid rgba(215, 181, 109, 0.4);
+  border-radius: 14px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.officer-problems-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 22px;
+  border-bottom: 1px solid rgba(215, 181, 109, 0.25);
+}
+
+.officer-problems-modal-header span,
+.officer-problems-detail-grid span,
+.officer-problems-full-description > span {
+  display: block;
+  color: #d7b56d;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.officer-problems-modal-header h2 {
+  margin: 0;
+  color: #fff;
+}
+
+.officer-problems-modal-header button {
+  border: none;
+  background: transparent;
+  color: #e1bd74;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.officer-problems-modal-body {
+  padding: 22px;
+}
+
+.officer-problems-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding-bottom: 22px;
+}
+
+.officer-problems-detail-grid strong {
+  color: #edf2f8;
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+
+.officer-problems-full-description {
+  padding: 16px;
+  margin-bottom: 18px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.officer-problems-full-description p {
+  margin: 8px 0 0;
+  color: #d0d9e5;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.officer-problems-review-field {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.officer-problems-review-field label {
+  color: #e1bd74;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.officer-problems-review-field textarea {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 13px;
+  border: 1px solid rgba(215, 181, 109, 0.35);
+  border-radius: 7px;
+  outline: none;
+  resize: vertical;
+  background: #101f34;
+  color: white;
+  font: inherit;
+}
+
+.officer-problems-review-field textarea:focus {
+  border-color: #d7b56d;
+  box-shadow: 0 0 0 2px rgba(215, 181, 109, 0.12);
+}
+
+.officer-problems-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.officer-problems-cancel-btn {
+  padding: 12px 18px;
+  border: 1px solid #9daabb;
+  border-radius: 8px;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+}
+
+.officer-problems-submit-btn {
+  border: none;
+}
+
+.officer-problems-reviewed-message {
+  margin-top: 20px;
+  padding: 14px;
+  border-radius: 8px;
+  color: #8ce0b0;
+  background: rgba(44, 160, 100, 0.13);
+}
+
+.officer-problems-footer {
+  text-align: center;
+  padding: 25px 0 10px;
+  color: #9eacbf;
+  font-size: 12px;
+}
+
+@media (max-width: 1000px) {
+  .officer-problems-summary {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .officer-problems-filters {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .officer-problems-filters input {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 600px) {
+  .officer-problems-page {
+    padding: 20px 4%;
+  }
+
+  .officer-problems-header,
+  .officer-problems-section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .officer-problems-header h1 {
+    font-size: 25px;
+  }
+
+  .officer-problems-header-actions {
+    width: 100%;
+  }
+
+  .officer-problems-header-actions > * {
+    flex: 1;
+  }
+
+  .officer-problems-summary,
+  .officer-problems-filters,
+  .officer-problems-detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .officer-problems-filters input {
+    grid-column: auto;
+  }
+
+  .officer-problems-content,
+  .officer-problems-card {
+    padding: 16px;
+  }
+
+  .officer-problems-modal-actions {
+    flex-direction: column;
+  }
+
+  .officer-problems-modal-actions button {
+    width: 100%;
+  }
+}

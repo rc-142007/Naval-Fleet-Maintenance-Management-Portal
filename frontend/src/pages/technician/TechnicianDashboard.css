@@ -1,0 +1,346 @@
+
+.technician-dashboard {
+  min-height: 100vh;
+  color: #f5f5f5;
+  background:
+    linear-gradient(rgba(5, 15, 28, 0.82), rgba(5, 15, 28, 0.9)),
+    url("../../assets/images/indiannavy.webp") center/cover fixed;
+}
+
+.technician-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 28px 5%;
+  border-bottom: 1px solid rgba(197, 164, 94, 0.3);
+  background: rgba(5, 15, 28, 0.45);
+}
+
+.technician-eyebrow,
+.technician-section-heading > div > span {
+  color: #c5a45e;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.technician-header h1 {
+  margin: 10px 0 5px;
+  font-size: 30px;
+  color: #f1d58e;
+}
+
+.technician-header p {
+  color: #c4ccd6;
+  margin: 0;
+}
+
+.technician-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.technician-role-badge {
+  color: #f1d58e;
+  border: 1px solid #c5a45e;
+  border-radius: 20px;
+  padding: 8px 15px;
+  font-size: 11px;
+}
+
+.technician-logout-btn,
+.technician-refresh-btn {
+  background: transparent;
+  color: #f1d58e;
+  border: 1px solid #c5a45e;
+  border-radius: 6px;
+  padding: 9px 16px;
+  cursor: pointer;
+}
+
+.technician-logout-btn:hover,
+.technician-refresh-btn:hover {
+  background: rgba(197, 164, 94, 0.2);
+}
+
+.technician-main {
+  max-width: 1500px;
+  margin: auto;
+  padding: 35px 5%;
+}
+
+.technician-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-bottom: 35px;
+}
+
+.technician-stat-card {
+  padding: 22px;
+  background: rgba(8, 22, 38, 0.78);
+  border: 1px solid rgba(197, 164, 94, 0.3);
+  border-radius: 10px;
+  backdrop-filter: blur(8px);
+}
+
+.technician-stat-card span {
+  color: #d3d7df;
+  font-size: 13px;
+}
+
+.technician-stat-card h2 {
+  font-size: 32px;
+  color: #f1d58e;
+  margin: 14px 0 5px;
+}
+
+.technician-stat-card p {
+  color: #aeb8c5;
+  font-size: 12px;
+  margin: 0;
+}
+
+.technician-equipment-section {
+  padding: 26px;
+  border: 1px solid rgba(197, 164, 94, 0.3);
+  border-radius: 12px;
+  background: rgba(5, 17, 31, 0.76);
+  backdrop-filter: blur(8px);
+}
+
+.technician-section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.technician-section-heading h2 {
+  color: #f1d58e;
+  margin: 9px 0;
+}
+
+.technician-section-heading p {
+  color: #c1c8d2;
+  font-size: 13px;
+}
+
+.technician-filters {
+  display: flex;
+  gap: 15px;
+  margin: 25px 0;
+}
+
+.technician-filters input,
+.technician-filters select {
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid rgba(197, 164, 94, 0.4);
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  outline: none;
+}
+
+.technician-filters input {
+  flex: 1;
+}
+
+.technician-filters select option {
+  background: #102238;
+  color: white;
+}
+
+.technician-equipment-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.technician-equipment-card {
+  padding: 20px;
+  border: 1px solid rgba(197, 164, 94, 0.35);
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.045);
+  transition: 0.2s ease;
+}
+
+.technician-equipment-card:hover {
+  border-color: #c5a45e;
+  transform: translateY(-3px);
+}
+
+.technician-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.technician-equipment-id {
+  color: #f1d58e;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.technician-status-active,
+.technician-status-inactive {
+  font-size: 10px;
+  padding: 6px 9px;
+  border-radius: 15px;
+}
+
+.technician-status-active {
+  color: #83e6a2;
+  background: rgba(46, 204, 113, 0.13);
+}
+
+.technician-status-inactive {
+  color: #ffaaaa;
+  background: rgba(231, 76, 60, 0.15);
+}
+
+.technician-equipment-card h3 {
+  color: #fff;
+  margin: 18px 0;
+  font-size: 19px;
+}
+
+.technician-equipment-details {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.technician-equipment-details p {
+  margin: 0;
+  color: #c5ccd5;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.technician-equipment-details strong {
+  color: #f1d58e;
+}
+
+.technician-condition-badge {
+  font-size: 11px;
+  padding: 5px 8px;
+  border-radius: 5px;
+}
+
+.tech-condition-operational {
+  color: #83e6a2;
+}
+
+.tech-condition-inspection {
+  color: #ffd580;
+}
+
+.tech-condition-maintenance {
+  color: #8fcaff;
+}
+
+.tech-condition-nonoperational {
+  color: #ff9999;
+}
+
+.technician-card-footer {
+  border-top: 1px solid rgba(197, 164, 94, 0.2);
+  margin-top: 20px;
+  padding-top: 13px;
+  color: #c5a45e;
+  font-size: 12px;
+}
+
+.technician-empty-state {
+  padding: 40px 15px;
+  text-align: center;
+  color: #c5ccd5;
+  border: 1px dashed rgba(197, 164, 94, 0.35);
+  border-radius: 8px;
+}
+
+.technician-error {
+  color: #ffaaaa;
+  background: rgba(180, 30, 30, 0.15);
+  border: 1px solid rgba(255, 100, 100, 0.3);
+  padding: 12px;
+  border-radius: 6px;
+  margin: 15px 0;
+}
+
+.technician-footer {
+  text-align: center;
+  padding: 22px;
+  color: #aeb8c5;
+  font-size: 12px;
+  border-top: 1px solid rgba(197, 164, 94, 0.2);
+}
+
+
+@media (max-width: 1000px) {
+  .technician-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .technician-equipment-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 650px) {
+  .technician-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .technician-header-actions {
+    flex-wrap: wrap;
+  }
+
+  .technician-stats-grid,
+  .technician-equipment-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .technician-filters {
+    flex-direction: column;
+  }
+
+  .technician-section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .technician-equipment-section {
+    padding: 16px;
+  }
+}
+
+/* MY INSPECTIONS BUTTON - MATCH LOGOUT */
+
+.technician-header-actions .technician-inspection-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 16px;
+  background: transparent;
+  color: #f1d58e !important;
+  border: 1px solid #c5a45e;
+  border-radius: 6px;
+  text-decoration: none !important;
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.technician-header-actions .technician-inspection-link:hover {
+  background: rgba(197, 164, 94, 0.2);
+  color: #f1d58e !important;
+  text-decoration: none !important;
+}
+
+

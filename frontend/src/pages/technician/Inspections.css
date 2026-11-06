@@ -1,0 +1,336 @@
+
+
+.inspection-page {
+  min-height: 100vh;
+  padding: 30px 5%;
+  color: #f5f5f5;
+  background:
+    linear-gradient(rgba(3, 13, 29, 0.88), rgba(3, 13, 29, 0.94)),
+    url("../../assets/images/indiannavy.webp") center/cover fixed;
+}
+
+.inspection-header,
+.inspection-section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.inspection-header {
+  padding: 20px 0 30px;
+  border-bottom: 1px solid rgba(220, 185, 110, 0.3);
+}
+
+.inspection-eyebrow,
+.inspection-section-heading > div > span {
+  color: #d7b56d;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.inspection-header h1 {
+  margin: 10px 0;
+  font-size: 32px;
+}
+
+.inspection-header p,
+.inspection-section-heading p {
+  color: #bdc7d6;
+  margin: 5px 0;
+}
+
+.inspection-main {
+  max-width: 1450px;
+  margin: 30px auto;
+}
+
+.inspection-refresh-btn,
+.inspection-primary-btn,
+.inspection-submit-btn {
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  background: #d4ad61;
+  color: #101b2b;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.inspection-refresh-btn:hover,
+.inspection-primary-btn:hover,
+.inspection-submit-btn:hover {
+  background: #edce8d;
+  transform: translateY(-2px);
+}
+
+.inspection-summary {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-bottom: 30px;
+}
+
+.inspection-summary-card,
+.inspection-form-section,
+.inspection-history-section {
+  background: rgba(8, 24, 45, 0.88);
+  border: 1px solid rgba(215, 181, 109, 0.25);
+  border-radius: 13px;
+  padding: 22px;
+  backdrop-filter: blur(10px);
+}
+
+.inspection-summary-card span {
+  color: #c0cad8;
+  font-size: 13px;
+}
+
+.inspection-summary-card h2 {
+  color: #e1bd74;
+  font-size: 30px;
+  margin: 12px 0 0;
+}
+
+.inspection-section-heading {
+  margin-bottom: 25px;
+}
+
+.inspection-section-heading h2 {
+  margin: 8px 0;
+}
+
+.inspection-form {
+  padding: 24px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.inspection-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.inspection-field {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.inspection-field label {
+  color: #e1bd74;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.inspection-field input,
+.inspection-field select,
+.inspection-field textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px;
+  border: 1px solid rgba(215, 181, 109, 0.3);
+  border-radius: 7px;
+  outline: none;
+  background: #101f34;
+  color: #fff;
+  font: inherit;
+}
+
+.inspection-field select option {
+  background: #101f34;
+  color: white;
+}
+
+.inspection-field input:focus,
+.inspection-field select:focus,
+.inspection-field textarea:focus {
+  border-color: #d7b56d;
+  box-shadow: 0 0 0 2px rgba(215, 181, 109, 0.12);
+}
+
+.inspection-field textarea {
+  resize: vertical;
+}
+
+.inspection-full-width {
+  grid-column: 1 / -1;
+}
+
+.inspection-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.inspection-cancel-btn {
+  padding: 12px 22px;
+  border: 1px solid #9daabb;
+  border-radius: 8px;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+}
+
+.inspection-submit-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.inspection-history-section {
+  margin-top: 30px;
+}
+
+.inspection-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.inspection-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 700px;
+}
+
+.inspection-table th,
+.inspection-table td {
+  padding: 16px 13px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.inspection-table th {
+  color: #e1bd74;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.inspection-table td {
+  color: #e0e7f0;
+  font-size: 13px;
+}
+
+.inspection-equipment-name {
+  display: block;
+  margin-top: 5px;
+  color: #9eacbf;
+  font-size: 12px;
+}
+
+.inspection-condition,
+.inspection-reviewed,
+.inspection-pending {
+  display: inline-block;
+  padding: 6px 9px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.inspection-operational,
+.inspection-reviewed {
+  color: #8ce0b0;
+  background: rgba(44, 160, 100, 0.16);
+}
+
+.inspection-needs {
+  color: #f1d078;
+  background: rgba(210, 160, 50, 0.17);
+}
+
+.inspection-maintenance {
+  color: #8cc9ff;
+  background: rgba(50, 130, 210, 0.17);
+}
+
+.inspection-nonoperational {
+  color: #ff9999;
+  background: rgba(210, 65, 65, 0.17);
+}
+
+.inspection-pending {
+  color: #f1d078;
+  background: rgba(210, 160, 50, 0.17);
+}
+
+.inspection-alert,
+.inspection-empty,
+.inspection-loading {
+  padding: 16px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.inspection-alert-error {
+  color: #ffaaaa;
+  background: rgba(180, 45, 45, 0.2);
+}
+
+.inspection-alert-success {
+  color: #9ce6b7;
+  background: rgba(40, 150, 90, 0.2);
+}
+
+.inspection-empty,
+.inspection-loading {
+  color: #bdc7d6;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.inspection-footer {
+  text-align: center;
+  padding: 25px 0 10px;
+  color: #9eacbf;
+  font-size: 12px;
+}
+
+@media (max-width: 900px) {
+  .inspection-summary {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .inspection-page {
+    padding: 20px 4%;
+  }
+
+  .inspection-header,
+  .inspection-section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .inspection-header h1 {
+    font-size: 25px;
+  }
+
+  .inspection-summary,
+  .inspection-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .inspection-full-width {
+    grid-column: auto;
+  }
+
+  .inspection-form {
+    padding: 15px;
+  }
+
+  .inspection-form-actions {
+    flex-direction: column;
+  }
+
+  .inspection-form-actions button {
+    width: 100%;
+  }
+}

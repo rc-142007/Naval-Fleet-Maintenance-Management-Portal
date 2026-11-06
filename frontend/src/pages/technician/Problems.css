@@ -1,0 +1,352 @@
+
+.problem-page {
+  min-height: 100vh;
+  padding: 30px 5%;
+  color: #f5f5f5;
+  background:
+    linear-gradient(rgba(3, 13, 29, 0.88), rgba(3, 13, 29, 0.94)),
+    url("../../assets/images/indiannavy.webp") center/cover fixed;
+}
+
+.problem-header,
+.problem-section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.problem-header {
+  padding: 20px 0 30px;
+  border-bottom: 1px solid rgba(220, 185, 110, 0.3);
+}
+
+.problem-eyebrow,
+.problem-section-heading > div > span {
+  color: #d7b56d;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.problem-header h1 {
+  margin: 10px 0;
+  font-size: 32px;
+}
+
+.problem-header p,
+.problem-section-heading p {
+  color: #bdc7d6;
+  margin: 5px 0;
+}
+
+.problem-main {
+  max-width: 1450px;
+  margin: 30px auto;
+}
+
+.problem-refresh-btn,
+.problem-primary-btn,
+.problem-submit-btn {
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  background: #d4ad61;
+  color: #101b2b;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.problem-refresh-btn:hover,
+.problem-primary-btn:hover,
+.problem-submit-btn:hover {
+  background: #edce8d;
+  transform: translateY(-2px);
+}
+
+.problem-summary {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-bottom: 30px;
+}
+
+.problem-summary-card,
+.problem-form-section,
+.problem-history-section {
+  background: rgba(8, 24, 45, 0.88);
+  border: 1px solid rgba(215, 181, 109, 0.25);
+  border-radius: 13px;
+  padding: 22px;
+  backdrop-filter: blur(10px);
+}
+
+.problem-summary-card span {
+  color: #c0cad8;
+  font-size: 13px;
+}
+
+.problem-summary-card h2 {
+  color: #e1bd74;
+  font-size: 30px;
+  margin: 12px 0 0;
+}
+
+.problem-section-heading {
+  margin-bottom: 25px;
+}
+
+.problem-section-heading h2 {
+  margin: 8px 0;
+}
+
+.problem-form {
+  padding: 24px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.problem-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.problem-field {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.problem-field label {
+  color: #e1bd74;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.problem-field input,
+.problem-field select,
+.problem-field textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px;
+  border: 1px solid rgba(215, 181, 109, 0.3);
+  border-radius: 7px;
+  outline: none;
+  background: #101f34;
+  color: #fff;
+  font: inherit;
+}
+
+.problem-field select option {
+  background: #101f34;
+  color: white;
+}
+
+.problem-field input:focus,
+.problem-field select:focus,
+.problem-field textarea:focus {
+  border-color: #d7b56d;
+  box-shadow: 0 0 0 2px rgba(215, 181, 109, 0.12);
+}
+
+.problem-field textarea {
+  resize: vertical;
+}
+
+.problem-field select:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.problem-full-width {
+  grid-column: 1 / -1;
+}
+
+.problem-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.problem-cancel-btn {
+  padding: 12px 22px;
+  border: 1px solid #9daabb;
+  border-radius: 8px;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+}
+
+.problem-submit-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.problem-history-section {
+  margin-top: 30px;
+}
+
+.problem-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.problem-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 850px;
+}
+
+.problem-table th,
+.problem-table td {
+  padding: 16px 13px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.problem-table th {
+  color: #e1bd74;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.problem-table td {
+  color: #e0e7f0;
+  font-size: 13px;
+}
+
+.problem-equipment-name,
+.problem-description-preview {
+  display: block;
+  margin-top: 5px;
+  color: #9eacbf;
+  font-size: 12px;
+  max-width: 260px;
+  overflow-wrap: anywhere;
+}
+
+.problem-severity,
+.problem-status {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.problem-severity-low {
+  color: #8ce0b0;
+  background: rgba(44, 160, 100, 0.16);
+}
+
+.problem-severity-medium {
+  color: #f1d078;
+  background: rgba(210, 160, 50, 0.17);
+}
+
+.problem-severity-high {
+  color: #ffb17d;
+  background: rgba(220, 110, 45, 0.17);
+}
+
+.problem-severity-critical {
+  color: #ff9999;
+  background: rgba(210, 65, 65, 0.2);
+}
+
+.problem-status-reported {
+  color: #f1d078;
+  background: rgba(210, 160, 50, 0.17);
+}
+
+.problem-status-review,
+.problem-status-repair {
+  color: #8cc9ff;
+  background: rgba(50, 130, 210, 0.17);
+}
+
+.problem-status-resolved {
+  color: #8ce0b0;
+  background: rgba(44, 160, 100, 0.16);
+}
+
+.problem-alert,
+.problem-empty,
+.problem-loading {
+  padding: 16px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.problem-alert-error {
+  color: #ffaaaa;
+  background: rgba(180, 45, 45, 0.2);
+}
+
+.problem-alert-success {
+  color: #9ce6b7;
+  background: rgba(40, 150, 90, 0.2);
+}
+
+.problem-empty,
+.problem-loading {
+  color: #bdc7d6;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.problem-footer {
+  text-align: center;
+  padding: 25px 0 10px;
+  color: #9eacbf;
+  font-size: 12px;
+}
+
+@media (max-width: 900px) {
+  .problem-summary {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .problem-page {
+    padding: 20px 4%;
+  }
+
+  .problem-header,
+  .problem-section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .problem-header h1 {
+    font-size: 25px;
+  }
+
+  .problem-summary,
+  .problem-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .problem-full-width {
+    grid-column: auto;
+  }
+
+  .problem-form {
+    padding: 15px;
+  }
+
+  .problem-form-actions {
+    flex-direction: column;
+  }
+
+  .problem-form-actions button {
+    width: 100%;
+  }
+}

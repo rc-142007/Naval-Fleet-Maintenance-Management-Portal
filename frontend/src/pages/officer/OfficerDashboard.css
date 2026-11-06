@@ -1,0 +1,265 @@
+
+.officer-dashboard {
+  min-height: 100vh;
+  color: #ffffff;
+  background:
+    linear-gradient(rgba(3, 12, 27, 0.88), rgba(3, 12, 27, 0.94)),
+    url("../../assets/images/indiannavy.webp");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.officer-header {
+  min-height: 85px;
+  padding: 16px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  background: rgba(3, 10, 24, 0.88);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.35);
+}
+
+.officer-header h1 {
+  margin: 0;
+  color: #e3bd58;
+  font-size: 27px;
+  letter-spacing: 2px;
+}
+
+.officer-header p {
+  margin: 5px 0 0;
+  color: #c4cbd7;
+  font-size: 12px;
+}
+
+.officer-header-right {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.officer-role {
+  color: #e3bd58;
+  border: 1px solid #b9973e;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.officer-logout {
+  padding: 10px 20px;
+  background: #b9973e;
+  color: #071326;
+  border: none;
+  border-radius: 7px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.officer-logout:hover {
+  background: #e3bd58;
+}
+
+.officer-main {
+  width: 90%;
+  max-width: 1450px;
+  margin: auto;
+  padding: 35px 0 50px;
+}
+
+.officer-welcome {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 28px;
+  margin-bottom: 35px;
+  background: rgba(12, 29, 52, 0.82);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 14px;
+}
+
+.officer-subtitle {
+  color: #e3bd58;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.officer-welcome h2 {
+  margin: 8px 0;
+  font-size: 30px;
+}
+
+.officer-welcome p {
+  color: #c1cad7;
+}
+
+.officer-date {
+  color: #e3bd58;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-align: right;
+}
+
+.officer-section-heading {
+  margin-bottom: 20px;
+}
+
+.officer-section-heading h2 {
+  color: #e3bd58;
+  margin-bottom: 6px;
+}
+
+.officer-section-heading p {
+  color: #b9c3d1;
+  font-size: 14px;
+}
+
+.officer-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.officer-stat-card {
+  padding: 22px;
+  min-height: 125px;
+  background: rgba(12, 29, 52, 0.88);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  border-radius: 12px;
+  transition: 0.25s ease;
+}
+
+.officer-stat-card:hover {
+  transform: translateY(-4px);
+  border-color: #d4af37;
+  background: rgba(20, 42, 70, 0.95);
+}
+
+.officer-stat-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.officer-stat-icon {
+  font-size: 25px;
+}
+
+.officer-stat-value {
+  color: #e3bd58;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.officer-stat-card h3 {
+  margin: 16px 0 0;
+  color: #d5dce6;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.officer-info-panel {
+  margin-top: 30px;
+  padding: 25px;
+  background: rgba(12, 29, 52, 0.85);
+  border-left: 4px solid #d4af37;
+  border-radius: 8px;
+}
+
+.officer-info-panel h3 {
+  color: #e3bd58;
+  margin-top: 0;
+}
+
+.officer-info-panel p {
+  color: #c1cad7;
+  line-height: 1.7;
+}
+
+.officer-message {
+  color: #e3bd58;
+  padding: 20px;
+}
+
+.officer-error {
+  color: #ff9999;
+  padding: 15px;
+  background: rgba(120, 20, 20, 0.2);
+  border-radius: 8px;
+}
+
+@media (max-width: 1000px) {
+  .officer-stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+
+/* Responsive styles */
+@media (max-width: 600px) {
+  .officer-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .officer-header-right {
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .officer-welcome {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .officer-welcome h2 {
+    font-size: 23px;
+  }
+
+  .officer-date {
+    text-align: left;
+  }
+
+  .officer-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .officer-main {
+    width: 92%;
+  }
+}
+
+/* Inspections navigation button */
+.officer-header-right .officer-nav-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  color: #071326;
+  background-color: #b9973e;
+  text-decoration: none;
+  border: none;
+  border-radius: 7px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.officer-header-right .officer-nav-link:visited {
+  color: #071326;
+}
+
+.officer-header-right .officer-nav-link:hover {
+  color: #071326;
+  background-color: #e3bd58;
+}
